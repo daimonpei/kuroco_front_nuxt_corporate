@@ -50,7 +50,7 @@
             <ClientOnly>
               <template v-if="isLoggedIn">
                 <p class="is-sp c-text--small u-mt-0">
-                  ようこそ！{{ authUser.name1 }}さん
+                  ようこそ!!!{{ authUser.name1 }}さん
                 </p>
                 <NuxtLink
                   to="/mypage"
