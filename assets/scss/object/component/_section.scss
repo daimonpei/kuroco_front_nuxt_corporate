@@ -91,9 +91,9 @@
       display: inline-block;
       font-size: 9rem;
       line-height: 0.6em;
-      // @include sp() {
-      //   padding-left: 1rem;
-      // }
+      @include sp() {
+        font-size: 8rem;
+      }
       b {
         display: inline-block;
         font-weight: bold;

@@ -6,6 +6,8 @@
   background-color: var(--color-primary);
 
   height: 560px;
+  overflow-y: visible;
+  overflow-x: clip;
 
   @include sp() {
     margin-bottom: var(--spacing-vertical-sp);
@@ -24,6 +26,8 @@
     // @include sp() {
     //   width: calc( 100% - var(--spacing-horizontal-sp) );
     // }
+    overflow-y: visible;
+    overflow-x: clip;
   }
   &__body {
     position: relative;
@@ -48,6 +52,7 @@
       text-align: left;
       width: 780px;
       @include sp() {
+        width: 100%;
         font-size: 3em;
         padding-left: 1em;
       }
@@ -65,18 +70,18 @@
       }
     }
     &__buttons {
-      margin: var(--spacing) 0;
-      padding: 0 var(--spacing);
+      // margin: var(--spacing) 0;
+      // padding: 0 var(--spacing);
       font-weight: bold;
       letter-spacing: 0.05em;
-      @include pc() {
-        font-size: var(--font-size-h4);
-      }
+      // @include pc() {
+      //   font-size: var(--font-size-h4);
+      // }
 
       &__item {
         display: inline-block;
         // margin: 0 var(--spacing);
-        padding: var(--spacing) var(--spacing-horizontal-pc);
+        // padding: var(--spacing) var(--spacing-horizontal-pc);
         // border: 2px solid #fff;
         // border-radius: 5px;
         font-size: var(--font-size-small);
@@ -88,6 +93,12 @@
         //   background-color: #fff;
         //   color: var(--color-primary);
         // }
+        .c-button {
+          padding: 1em;
+          border-color: #fff;
+          background: transparent;
+          margin-right: 2em;
+        }
       }
     }
   }
@@ -111,6 +122,8 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    overflow-y: visible;
+    overflow-x: clip;
     &__image {
       position: absolute;
       z-index: -1;

@@ -2,27 +2,17 @@
   <div>
     <section class="c-hero">
       <div class="c-hero__body">
-        <p class="c-hero__body__lead">
+        <div class="c-hero__body__lead">
           <span>ビルに<br />駐車場に<br />動画広告を</span>
-        </p>
-        <ul class="c-hero__body__buttons">
-          <li class="c-hero__body__buttons__item">
-            <NuxtLink
-              to="/contact/"
-              @click.native="Drawer = false"
-              class="c-button"
-              >資料請求</NuxtLink
-            >
-          </li>
-          <li class="c-hero__body__buttons__item">
-            <NuxtLink
-              to="/contact/"
-              @click.native="Drawer = false"
-              class="c-button"
-              >お問い合わせ</NuxtLink
-            >
-          </li>
-        </ul>
+          <ul class="c-hero__body__buttons">
+            <li class="c-hero__body__buttons__item">
+              <NuxtLink to="/contact/" class="c-button">資料請求</NuxtLink>
+            </li>
+            <li class="c-hero__body__buttons__item">
+              <NuxtLink to="/contact/" class="c-button">お問い合わせ</NuxtLink>
+            </li>
+          </ul>
+        </div>
       </div>
       <img src="~/assets/image/building.png" alt="hero" class="c-hero__image" />
       <div class="c-hero__background">

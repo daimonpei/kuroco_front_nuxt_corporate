@@ -48,7 +48,7 @@
       // margin-bottom: var(--spacing-small);
       img,
       svg {
-        height: 60px;
+        height: 64px;
       }
     }
   }
@@ -57,6 +57,7 @@
     display: flex;
     justify-content: flex-end;
     &__toggle {
+      display: none;
       @include pc() {
         display: none;
       }
@@ -104,27 +105,30 @@
         display: flex;
         align-items: center;
       }
-      @include sp() {
-        position: fixed;
-        top: var(--header-height-sp);
-        right: -100vw;
-        width: 100%;
-        height: calc(100% - var(--header-height-sp));
-        padding-top: var(--spacing-horizontal-sp);
-        background-color: var(--color-white);
-        z-index: 100;
-        transition: var(--transition-seconds) ease-out;
-        .l-header.is-open & {
-          right: 0;
-        }
-      }
+      // @include sp() {
+      //   position: fixed;
+      //   top: var(--header-height-sp);
+      //   right: -100vw;
+      //   width: 100%;
+      //   height: calc(100% - var(--header-height-sp));
+      //   padding-top: var(--spacing-horizontal-sp);
+      //   background-color: var(--color-white);
+      //   z-index: 100;
+      //   transition: var(--transition-seconds) ease-out;
+      //   .l-header.is-open & {
+      //     right: 0;
+      //   }
+      // }
     }
     &__list {
-      @include pc() {
-        display: inline-flex;
-        flex-wrap: wrap;
-        align-items: center;
-      }
+      // @include pc() {
+      //   display: inline-flex;
+      //   flex-wrap: wrap;
+      //   align-items: center;
+      // }
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
       &__item {
         padding: 0 0.44em;
         a {
@@ -143,6 +147,18 @@
           // &:hover {
           //   color: var(--color-light-gray);
           // }
+          @include sp() {
+            font-size: 0.78em;
+            padding: 0.66em 1.5em;
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+          }
+        }
+        @include sp() {
+          &:not(:first-child) {
+            display: none;
+          }
         }
       }
     }

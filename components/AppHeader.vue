@@ -1,7 +1,10 @@
 <template>
   <header
     class="l-header"
-    :class="{ 'is-open': Drawer, topoftop: isIndexPage && scrollTop < 550 }"
+    :class="{
+      'is-open': Drawer,
+      topoftop: isIndexPage && scrollTop < topoftopLine
+    }"
   >
     <div class="l-header__inner">
       <div class="l-header__logo">
@@ -143,10 +146,23 @@ const { authUser, isLoggedIn, logout } = useAuth();
 <script setup>
 import { ref } from 'vue';
 const Drawer = ref(false);
+
 // 現在のページ情報
 const route = useRoute();
 
+const topoftopLine = ref(550);
+
+// モバイルかどうか
+const isMobile = ref(false);
+// モバイルかどうかを判定
+const handleResize = () => {
+  isMobile.value = window.innerWidth < 768;
+  topoftopLine.value = isMobile.value ? 60 : 550;
+};
+
+// トップページかどうか
 const isIndexPage = ref(route.path === '/');
+
 // ページの遷移を監視
 watch(
   () => route.path,
@@ -159,9 +175,12 @@ const scrollTop = ref(0);
 // ページのスクロール位置を取得
 const handleScroll = () => {
   scrollTop.value = window.scrollY;
+  console.log(scrollTop.value);
 };
-// スクロールイベントを追加
+
 onMounted(() => {
+  handleResize();
+  window.addEventListener('resize', handleResize);
   window.addEventListener('scroll', handleScroll);
 });
 </script>
