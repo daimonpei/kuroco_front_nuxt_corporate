@@ -10,6 +10,9 @@
   @include sp () {
     font-size: var(--font-size-h1-sp);
   }
+  &.left{
+    text-align: left;
+  }
 }
 .c-heading--lv2 {
   @extend %heading;

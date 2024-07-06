@@ -1,9 +1,12 @@
 <template>
-  <header class="l-header" :class="{ 'is-open': Drawer }">
+  <header
+    class="l-header"
+    :class="{ 'is-open': Drawer, topoftop: isIndexPage && scrollTop < 550 }"
+  >
     <div class="l-header__inner">
       <div class="l-header__logo">
         <NuxtLink to="/" @click.native="Drawer = false"
-          ><img src="~/assets/image/logo_black.svg" alt="Company Name" />
+          ><img src="~/assets/image/logo_white.svg" alt="Company Name" />
         </NuxtLink>
       </div>
       <nav class="l-header__nav">
@@ -21,7 +24,7 @@
         <div class="l-header__nav__inner">
           <ul class="l-header__nav__list">
             <li class="l-header__nav__list__item">
-              <NuxtLink to="/company/" @click.native="Drawer = false"
+              <NuxtLink to="/service/" @click.native="Drawer = false"
                 >サイビジョンについて</NuxtLink
               >
             </li>
@@ -132,8 +135,33 @@
   </header>
 </template>
 
-<script setup>
+<!-- <script setup>
 import { computed, ref } from 'vue';
 const Drawer = ref(false);
 const { authUser, isLoggedIn, logout } = useAuth();
+</script> -->
+<script setup>
+import { ref } from 'vue';
+const Drawer = ref(false);
+// 現在のページ情報
+const route = useRoute();
+
+const isIndexPage = ref(route.path === '/');
+// ページの遷移を監視
+watch(
+  () => route.path,
+  (path) => {
+    isIndexPage.value = path === '/';
+  }
+);
+
+const scrollTop = ref(0);
+// ページのスクロール位置を取得
+const handleScroll = () => {
+  scrollTop.value = window.scrollY;
+};
+// スクロールイベントを追加
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
 </script>

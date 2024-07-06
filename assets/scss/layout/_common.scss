@@ -1,4 +1,5 @@
 .l-container {
+  background-color: var(--color-white);
   @include pc() {
     margin-top: var(--header-height-pc);
     padding-bottom: calc(var(--spacing-vertical-pc) * 1.5);
@@ -67,7 +68,7 @@
       position: relative;
       @include pc() {
         flex: 0 0 220px;
-        margin-left: calc( var(--spacing-horizontal-pc) * 2 );
+        margin-left: calc(var(--spacing-horizontal-pc) * 2);
       }
       @include sp() {
         width: 100%;
@@ -92,11 +93,10 @@
   }
 }
 
-
-[class*=" l-container"],
-[class^="l-container"] {
+[class*=' l-container'],
+[class^='l-container'] {
   &:after {
-    content: "";
+    content: '';
     clear: both;
     display: block;
   }

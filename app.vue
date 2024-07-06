@@ -7,6 +7,6 @@
   </NuxtLayout>
 </template>
 
-<script setup>
+<!-- <script setup>
 await useAuth().profile();
-</script>
+</script> -->

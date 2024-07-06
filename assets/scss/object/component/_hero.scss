@@ -9,17 +9,17 @@
 
   @include sp() {
     margin-bottom: var(--spacing-vertical-sp);
-    padding: var(--spacing-horizontal-sp) 0 calc( var(--spacing-vertical-sp) * 4);
+    padding: var(--spacing-horizontal-sp) 0 calc(var(--spacing-vertical-sp) * 4);
   }
   &__image {
     position: absolute;
     z-index: 1;
     bottom: -50px;
-    left: 50%;
+    left: 64%;
     transform: translateX(-50%);
     display: block;
     // margin: auto;
-    width: calc( 100% - var(--spacing-horizontal-sp) );
+    width: calc(100% - var(--spacing-horizontal-sp));
     max-width: 620px;
     // @include sp() {
     //   width: calc( 100% - var(--spacing-horizontal-sp) );
@@ -44,35 +44,36 @@
       // font-family: 'Secular One', sans-serif;
       line-height: 1.3;
       // padding-right: var(--spacing-horizontal-sp);
-      // padding: 0 1em;
+      padding: 0;
       text-align: left;
-      width: 640px;
-      // @include sp() {
-      //   font-size: 5em;
-      // }
-      span{
-        background: linear-gradient(transparent 40%, rgb(29 0 255) 40%)
+      width: 780px;
+      @include sp() {
+        font-size: 3em;
+        padding-left: 1em;
       }
+      // span{
+      //   background: linear-gradient(transparent 40%, rgb(29 0 255) 40%)
+      // }
     }
     &__text {
       margin: var(--spacing) 0;
       padding: 0 var(--spacing);
       font-weight: bold;
-      letter-spacing: .05em;
+      letter-spacing: 0.05em;
       @include pc() {
         font-size: var(--font-size-h4);
       }
     }
-    &__buttons{
+    &__buttons {
       margin: var(--spacing) 0;
       padding: 0 var(--spacing);
       font-weight: bold;
-      letter-spacing: .05em;
+      letter-spacing: 0.05em;
       @include pc() {
         font-size: var(--font-size-h4);
       }
 
-      &__item{
+      &__item {
         display: inline-block;
         // margin: 0 var(--spacing);
         padding: var(--spacing) var(--spacing-horizontal-pc);
@@ -103,4 +104,27 @@
   //     width: calc( 100% - var(--spacing-horizontal-sp) );
   //   }
   // }
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    &__image {
+      position: absolute;
+      z-index: -1;
+      &.cloud1 {
+        width: 66%;
+        top: -2%;
+        left: -20%;
+      }
+      &.cloud2 {
+        width: 77%;
+        top: -100%;
+        right: -20%;
+        opacity: 0.66;
+      }
+    }
+  }
 }
