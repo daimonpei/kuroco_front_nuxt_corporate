@@ -76,8 +76,8 @@
         </div>
 
         <UiCardList
-          v-if="ltdNews?.data?.list?.length > 0"
-          :list="ltdNews.data.list"
+          v-if="visions?.list?.length > 0"
+          :list="visions.list"
         ></UiCardList>
 
         <div class="u-display-flex u-display-flex-align-items-center u-display-flex-justify-content-center u-mb-20">
@@ -104,6 +104,12 @@
               <b class="p5">（50,000円/月〜）</b>
             </div>
           </div>
+          <div>
+            <p class="c-text c-text--small">
+              ※ 放映時間15秒/回 放映頻度 4回/h （7〜24時）
+              ※ 設置場所の視認性や通行量により金額は変動します
+            </p>
+          </div>
           <NuxtLink to="/login/register/" class="c-button c-button--full"
               >お問い合わせ</NuxtLink
             >
@@ -124,192 +130,12 @@ const { data: news } = await useFetch(
   }
 );
 console.log({news});
-// const { data: ltdNews } = await useFetch(
-//   `${config.public.kurocoApiDomain}/rcms-api/1/ltd-news/list`,
-//   {
-//     credentials: "include",
-//     server: false,
-//   }
-// );
-const ltdNews = {
-  "errors": [],
-  "messages": [],
-  "data": {
-      "list": [
-          {
-              "topics_id": 8,
-              "ymd": "2023-08-09",
-              "subject": "NBB BUILDING 屋上サイン",
-              "contents_type_nm": "東京都渋谷区",
-              "ext_1": {
-                  "id": "8_ext_01_0",
-                  "url": "https://daimonpei.g.kuroco-img.app/files/user/assets/images/v00001.png",
-                  "desc": "",
-                  "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/8_ext_1_0.png"
-              }
-          },
-          {
-              "topics_id": 9,
-              "ymd": "2023-06-26",
-              "subject": "NBB BUILDING 屋上サイン",
-              "contents_type_nm": "東京都渋谷区",
-              "ext_1": {
-                  "id": "9_ext_01_0",
-                  "url": "https://daimonpei.g.kuroco-img.app/files/user/assets/images/v00002.png",
-                  "desc": "",
-                  "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/9_ext_1_0.png"
-              }
-          },
-          {
-              "topics_id": 10,
-              "ymd": "2022-12-20",
-              "subject": "NBB BUILDING 屋上サイン",
-              "contents_type_nm": "東京都渋谷区",
-              "ext_1": {
-                  "id": "10_ext_01_0",
-                  "url": "https://daimonpei.g.kuroco-img.app/files/user/assets/images/v00003.png",
-                  "desc": "",
-                  "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/10_ext_1_0.png"
-              }
-          },
-          {
-              "topics_id": 11,
-              "ymd": "2023-08-09",
-              "subject": "NBB BUILDING 屋上サイン",
-              "contents_type_nm": "東京都渋谷区",
-              "ext_1": {
-                  "id": "8_ext_01_0",
-                  "url": "https://daimonpei.g.kuroco-img.app/files/user/assets/images/v00001.png",
-                  "desc": "",
-                  "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/8_ext_1_0.png"
-              }
-          },
-          {
-              "topics_id": 12,
-              "ymd": "2023-06-26",
-              "subject": "NBB BUILDING 屋上サイン",
-              "contents_type_nm": "東京都渋谷区",
-              "ext_1": {
-                  "id": "9_ext_01_0",
-                  "url": "https://daimonpei.g.kuroco-img.app/files/user/assets/images/v00002.png",
-                  "desc": "",
-                  "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/9_ext_1_0.png"
-              }
-          },
-          {
-              "topics_id": 13,
-              "ymd": "2022-12-20",
-              "subject": "NBB BUILDING 屋上サイン",
-              "contents_type_nm": "東京都渋谷区",
-              "ext_1": {
-                  "id": "10_ext_01_0",
-                  "url": "https://daimonpei.g.kuroco-img.app/files/user/assets/images/v00003.png",
-                  "desc": "",
-                  "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/10_ext_1_0.png"
-              }
-          }
-      ]
+const { data: visions } = await useFetch(
+  `${config.public.kurocoApiDomain}/rcms-api/5/visions/list`,
+  {
+    credentials: "include",
+    server: false,
   }
-};
-console.log({ltdNews});
-/*
-{
-    "ltdNews": {
-        "__v_isShallow": false,
-        "dep": {
-            "w": 0,
-            "n": 0
-        },
-        "__v_isRef": true,
-        "_rawValue": {
-            "errors": [],
-            "messages": [],
-            "data": {
-                "list": [
-                    {
-                        "topics_id": 8,
-                        "ymd": "2023-08-09",
-                        "subject": "オンラインセミナーの動画配信",
-                        "contents_type_nm": "プレミアム会員限定",
-                        "ext_1": {
-                            "id": "8_ext_01_0",
-                            "url": "https://dev-nuxt-corporate.g.kuroco-img.app/t=6e36e33863205d50cbf57eb3491caffd87c7e132c41bc42951a9ec29bed3671d/files/topics/8_ext_1_0.png",
-                            "desc": "",
-                            "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/8_ext_1_0.png"
-                        }
-                    },
-                    {
-                        "topics_id": 9,
-                        "ymd": "2023-06-26",
-                        "subject": "各種資料ダウンロード",
-                        "contents_type_nm": "会員限定",
-                        "ext_1": {
-                            "id": "9_ext_01_0",
-                            "url": "https://dev-nuxt-corporate.g.kuroco-img.app/t=bd50490b3156207ad2d453bd747318e505b993dea904f9fdabc9c30570eb9855/files/topics/9_ext_1_0.png",
-                            "desc": "",
-                            "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/9_ext_1_0.png"
-                        }
-                    },
-                    {
-                        "topics_id": 10,
-                        "ymd": "2022-12-20",
-                        "subject": "ヘッドレスCMSと構築方法とは？",
-                        "contents_type_nm": "誰でも閲覧可能",
-                        "ext_1": {
-                            "id": "10_ext_01_0",
-                            "url": "https://dev-nuxt-corporate.g.kuroco-img.app/v=1693802883/files/topics/10_ext_1_0.png",
-                            "desc": "",
-                            "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/10_ext_1_0.png"
-                        }
-                    }
-                ]
-            }
-        },
-        "_value": {
-            "errors": [],
-            "messages": [],
-            "data": {
-                "list": [
-                    {
-                        "topics_id": 8,
-                        "ymd": "2023-08-09",
-                        "subject": "オンラインセミナーの動画配信",
-                        "contents_type_nm": "プレミアム会員限定",
-                        "ext_1": {
-                            "id": "8_ext_01_0",
-                            "url": "https://dev-nuxt-corporate.g.kuroco-img.app/t=6e36e33863205d50cbf57eb3491caffd87c7e132c41bc42951a9ec29bed3671d/files/topics/8_ext_1_0.png",
-                            "desc": "",
-                            "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/8_ext_1_0.png"
-                        }
-                    },
-                    {
-                        "topics_id": 9,
-                        "ymd": "2023-06-26",
-                        "subject": "各種資料ダウンロード",
-                        "contents_type_nm": "会員限定",
-                        "ext_1": {
-                            "id": "9_ext_01_0",
-                            "url": "https://dev-nuxt-corporate.g.kuroco-img.app/t=bd50490b3156207ad2d453bd747318e505b993dea904f9fdabc9c30570eb9855/files/topics/9_ext_1_0.png",
-                            "desc": "",
-                            "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/9_ext_1_0.png"
-                        }
-                    },
-                    {
-                        "topics_id": 10,
-                        "ymd": "2022-12-20",
-                        "subject": "ヘッドレスCMSと構築方法とは？",
-                        "contents_type_nm": "誰でも閲覧可能",
-                        "ext_1": {
-                            "id": "10_ext_01_0",
-                            "url": "https://dev-nuxt-corporate.g.kuroco-img.app/v=1693802883/files/topics/10_ext_1_0.png",
-                            "desc": "",
-                            "url_org": "https://dev-nuxt-corporate.g.kuroco-img.app/files/topics/10_ext_1_0.png"
-                        }
-                    }
-                ]
-            }
-        }
-    }
-}
-*/
+);
+console.log({visions});
 </script>
