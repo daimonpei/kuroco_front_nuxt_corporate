@@ -15,9 +15,12 @@
   @extend %button;
   display: inline-flex;
   align-items: center;
-  border-color: var(--color-base);
+  // border-color: var(--color-base);
   background-color: var(--color-base);
   color: var(--color-white);
+  border: 3px solid #000;
+  border-radius: 0;
+  text-align: center;
   svg {
     transition: var(--transition-seconds);
   }
@@ -77,6 +80,11 @@
         fill: var(--color-white);
       }
     }
+  }
+  &--full{
+    width: 100%;
+    justify-content: center;
+  
   }
   &--disabled {
     @extend %button;

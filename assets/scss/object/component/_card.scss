@@ -1,7 +1,8 @@
 .c-card {
   &__image {
     position: relative;
-    border-radius: var(--border-radius-large);
+    // border-radius: var(--border-radius-large);
+    border: 6px solid #000;
     overflow: hidden;
     &::before {
       opacity: 0;
@@ -30,13 +31,13 @@
       top: 0;
       left: 0;
       padding: var(--spacing-small) var(--spacing);
-      border-radius: var(--border-radius-large) 0 var(--border-radius-large) 0;
+      // border-radius: var(--border-radius-large) 0 var(--border-radius-large) 0;
       z-index: 1;
     }
   }
   &__heading {
     margin: 0;
-    padding: var(--spacing) 0;
+    padding: 0.5em 0 1.5em;
     font-weight: bold;
     transition: var(--transition-seconds) color;
     .c-card:hover & {

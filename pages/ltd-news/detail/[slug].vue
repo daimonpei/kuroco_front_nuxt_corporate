@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div></div>
+  <!--div>
     <UiPageHeader
       :path="[{ label: '会員限定コンテンツ', to: '/ltd-news/' }]"
       subject="会員限定コンテンツ"
@@ -31,7 +32,6 @@
         </div>
       </article>
 
-      <!-- when exclusive details content can't be fetched -->
       <template v-else>
         <div v-if="isLoggedIn">
           <p class="c-alert__heading">プレミアム会員会員限定コンテンツです。</p>
@@ -54,7 +54,7 @@
         </div>
       </template>
     </div>
-  </div>
+  </div-->
 </template>
 
 <script setup>

@@ -4,12 +4,12 @@ export default defineNuxtConfig({
   ssr: false,
   runtimeConfig: {
     public: {
-      kurocoApiDomain: 'https://dev-nuxt-corporate.g.kuroco.app',
+      kurocoApiDomain: 'https://daimonpei.g.kuroco.app',
     },
   },
   app: {
     head: {
-      title: 'front_nuxt_corporate',
+      title: 'CyVision',
       htmlAttrs: {
         lang: 'en',
       },

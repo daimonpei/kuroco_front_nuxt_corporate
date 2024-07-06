@@ -3,7 +3,7 @@
     <div class="l-header__inner">
       <div class="l-header__logo">
         <NuxtLink to="/" @click.native="Drawer = false"
-          ><img src="~/assets/image/logo.svg" alt="Company Name" />
+          ><img src="~/assets/image/logo_black.svg" alt="Company Name" />
         </NuxtLink>
       </div>
       <nav class="l-header__nav">
@@ -22,22 +22,7 @@
           <ul class="l-header__nav__list">
             <li class="l-header__nav__list__item">
               <NuxtLink to="/company/" @click.native="Drawer = false"
-                >企業情報</NuxtLink
-              >
-            </li>
-            <li class="l-header__nav__list__item">
-              <NuxtLink to="/service/" @click.native="Drawer = false"
-                >事業内容</NuxtLink
-              >
-            </li>
-            <li class="l-header__nav__list__item">
-              <NuxtLink to="/news/" @click.native="Drawer = false"
-                >ニュースリリース</NuxtLink
-              >
-            </li>
-            <li class="l-header__nav__list__item">
-              <NuxtLink to="/ltd-news/" @click.native="Drawer = false"
-                >会員限定コンテンツ</NuxtLink
+                >サイビジョンについて</NuxtLink
               >
             </li>
             <li class="l-header__nav__list__item">
@@ -46,7 +31,7 @@
               >
             </li>
           </ul>
-          <div class="l-header__nav__options">
+          <!-- <div class="l-header__nav__options">
             <ClientOnly>
               <template v-if="isLoggedIn">
                 <p class="is-sp c-text--small u-mt-0">
@@ -140,7 +125,7 @@
                 >
               </template>
             </ClientOnly>
-          </div>
+          </div> -->
         </div>
       </nav>
     </div>

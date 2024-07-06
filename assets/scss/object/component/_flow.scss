@@ -1,0 +1,62 @@
+.c-flow{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  // width: 800px;
+  margin: 0 auto;
+  *{
+    box-sizing: border-box;
+  }
+  &__item {
+    position: relative;
+    flex-basis: 33%;
+    font-size: 2.2rem;
+    letter-spacing: 0.2em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: 3px solid #000;
+    height: 3em;
+    @include pc() {
+    }
+    @include sp() {
+    }
+    span{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+    &:not(:last-child)::before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: -0.1em;
+      right: -3.14em;
+      width: 0;
+      height: 0;
+      border-top: 1.5em solid transparent;
+      border-left: 1.5em solid #000;
+      border-right: 1.5em solid transparent;
+      border-bottom: 1.5em solid transparent;
+      margin: 0 auto;
+      z-index: 1;
+    }
+    &:not(:last-child)::after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -2.77em;
+      width: 0;
+      height: 0;
+      border-top: 1.4em solid transparent;
+      border-left: 1.4em solid #fff;
+      border-right: 1.4em solid transparent;
+      border-bottom: 1.4em solid transparent;
+      margin: 0 auto;
+      z-index: 2;
+    }
+  }
+}
