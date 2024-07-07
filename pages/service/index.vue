@@ -1,7 +1,15 @@
 <template>
   <div v-if="response" class="l-container--wrap">
     <UiPageHeader :subject="response.details.subject" subheading="Service" />
+
     <article class="c-article">
+      <div class="l-container--large l-container--contents">
+        <div>
+          <p>LEDサイネージビジネス</p>
+          <p>×</p>
+          <p>不動産証券化マーケット</p>
+        </div>
+      </div>
       <div class="l-container--large l-container--contents">
         <div v-html="response.details.contents"></div>
       </div>
@@ -16,8 +24,8 @@ const { data: response } = await useFetch(
   // `${config.public.kurocoApiDomain}/rcms-api/1/content/details/service`,
   `${config.public.kurocoApiDomain}/rcms-api/7/contents/service`,
   {
-    credentials: "include",
-    server: false,
+    credentials: 'include',
+    server: false
   }
 );
 </script>

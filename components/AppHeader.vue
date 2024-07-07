@@ -12,7 +12,7 @@
           ><img src="~/assets/image/logo_white.svg" alt="Company Name" />
         </NuxtLink>
       </div>
-      <nav class="l-header__nav">
+      <nav class="l-header__nav" v-if="!isMobile">
         <button
           @click="Drawer = !Drawer"
           type="button"

@@ -4,10 +4,13 @@
       <nav class="l-footer__nav">
         <ul class="l-footer__nav__list">
           <li>
+            <NuxtLink to="/company/">運営会社</NuxtLink>
+          </li>
+          <li>
             <NuxtLink to="/privacy/">プライバシーポリシー</NuxtLink>
           </li>
           <li>
-            <a href="#">利用規約</a>
+            <NuxtLink to="/terms/">利用規約</NuxtLink>
           </li>
         </ul>
         <ul class="l-footer__nav__list">
@@ -122,7 +125,9 @@
           </li>
         </ul>
       </nav>
-      <p class="l-footer__copyright">© 2024 CyPlace Inc. All Rights Reserved.</p>
+      <p class="l-footer__copyright">
+        © 2024 CyPlace Inc. All Rights Reserved.
+      </p>
     </div>
   </footer>
 </template>
