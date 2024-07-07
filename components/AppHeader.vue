@@ -175,7 +175,7 @@ const scrollTop = ref(0);
 // ページのスクロール位置を取得
 const handleScroll = () => {
   scrollTop.value = window.scrollY;
-  console.log(scrollTop.value);
+  // console.log(scrollTop.value);
 };
 
 onMounted(() => {

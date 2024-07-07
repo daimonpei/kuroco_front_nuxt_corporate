@@ -78,6 +78,9 @@
   }
 
   &--contents {
+    table {
+      width: 100%;
+    }
     @include pc() {
       padding-top: var(--spacing-vertical-pc);
       &:not(:last-of-type) {

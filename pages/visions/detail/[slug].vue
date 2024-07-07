@@ -30,7 +30,7 @@
           <div v-html="response.details.lead"></div>
         </div>
         <div class="l-container--contents">
-          <div v-html="response.details.contents"></div>
+          <div v-html="response.details.content"></div>
         </div>
 
         <hr />
@@ -47,6 +47,11 @@
 
         <hr />
 
+        <div class="l-container--contents u-text-align-center">
+          <NuxtLink to="/contact/" class="c-button c-button--full"
+            >掲載を申し込む</NuxtLink
+          >
+        </div>
         <div class="l-container--contents u-pt-30 u-text-align-center">
           <NuxtLink :to="'/visions/'" class="c-button"> 一覧へ戻る </NuxtLink>
         </div>
@@ -68,4 +73,5 @@ const response = await $fetch(
     server: false
   }
 ).catch((error) => console.info(error));
+console.log({ response });
 </script>
