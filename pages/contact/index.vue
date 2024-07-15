@@ -113,7 +113,7 @@
                 />
               </template>
               <!-- ファイル -->
-              <template v-if="n.type === 7">
+              <template v-if="n.type === 12">
                 <ul>
                   <li>
                     <input
@@ -278,7 +278,7 @@ const formatDate = (date) => {
 };
 
 const { data: response } = await useFetch(
-  `${config.public.kurocoApiDomain}/rcms-api/1/inquiry/1`,
+  `${config.public.kurocoApiDomain}/rcms-api/9/form/3`,
   {
     credentials: 'include',
     server: false
@@ -319,7 +319,7 @@ const handleFileChange = async (e) => {
 
   try {
     const response = await $fetch(
-      `${config.public.kurocoApiDomain}/rcms-api/1/upload`,
+      `${config.public.kurocoApiDomain}/rcms-api/9/upload`,
       {
         credentials: 'include',
         method: 'POST',
@@ -352,7 +352,7 @@ const handleOnSubmit = async () => {
   try {
     loading.value = true;
     const response = await $fetch(
-      `${config.public.kurocoApiDomain}/rcms-api/1/inquiry/1`,
+      `${config.public.kurocoApiDomain}/rcms-api/9/form`,
       {
         credentials: 'include',
         method: 'POST',
